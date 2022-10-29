@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cruds Operations</title>
+        <!-- fontawesome css library -->
+        <link rel="stylesheet" href="css/vendors/all.min.css">
+        <!-- style file -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- =================================================== Light , Dark Mode =================================================== -->
+        <div class="mode">
+            <i class="fa fa-moon"></i>
+        </div>
+        <!-- =================================================== Crud Container =================================================== -->
+        <div class="crud">
+            <!-- +++++++++++++++++++++++++ Header section +++++++++++++++++++++++++ -->
+            <div class="head">
+                <h2>crud</h2>
+                <p>product management system</p>
+            </div>
+             <!-- +++++++++++++++++++++++++ Inputs section +++++++++++++++++++++++++ -->
+             <div class="inputs">
+                <!-- //////////// title inputField //////////// -->
+                <input type="text" id="title" placeholder="title">
+                <!-- //////////// price inputFields //////////// -->
+                <div class="price">
+                    <input onkeyup="getTotal()" type="number" id="price"       placeholder="price">
+                    <input onkeyup="getTotal()" type="number" id="taxes"       placeholder="taxes">
+                    <input onkeyup="getTotal()" type="number" id="ads"         placeholder="ads">
+                    <input onkeyup="getTotal()" type="number" id="discount"    placeholder="discount">
+                    <span id="total"></span>
+                </div>
+                <!-- //////////// count inputField //////////// -->
+                <input type="number" id="count"       placeholder="count">
+                <!-- //////////// category inputField //////////// -->
+                <input type="text"   id="category"    placeholder="category">
+                <!-- //////////// create button //////////// -->
+                <button id="submit">Create</button>
+            </div>
+             <!-- +++++++++++++++++++++++++ Outputs section +++++++++++++++++++++++++ -->
+             <div class="outputs">
+                <!-- //////////// input Search //////////// -->
+                <div class="searchBlock">
+                    <!-- When Write on "search inputField" , Call "searchData()" and Return "value" of "search inputField"-->
+                    <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
+                    <!-- search buttons -->
+                    <div class="btnSearch">
+                        <!-- When click on "search button" , Call "getSearchMode()" function and return "button id"  -->
+                        <button onclick="getSearchMode(this.id)" id="searchTitle">Search By Title</button>
+                        <!-- When click on "search button" , Call "getSearchMode()" function and return "button id"  -->
+                        <button onclick="getSearchMode(this.id)" id="searchCategory">Search By Category</button>
+                    </div>
+                </div>
+                <!-- //////////// DeleteAll Button  //////////// -->
+                <div class="deleteAllDiv" id="deleteAll">
+                    <!-- create the Button in Javascript -->
+                </div>
+                <!-- //////////// Table //////////// -->
+                <table>
+                    <!-- Table Header -->
+                    <thead>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>count</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </thead>
+                    <!-- Table Body -->
+                    <tbody id="tbody">
+                        <!-- Adding Rows Using JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- script file -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
